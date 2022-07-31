@@ -14,6 +14,8 @@ import org.jsoup.select.Elements;
 
 //Uses Jsoup to crawl through web and creates text files with parsed information.
 public class WebCrawler {
+	
+	// Dynamic - Console Input
 	public static String crawl(String link) {
 		
 		
@@ -37,6 +39,8 @@ public class WebCrawler {
 		}
 		return links;
 	}
+	
+	// New File Creation to WebPages Folder
 	public static void createFile(String title,String text,String link) {
 		try {
 			String[] titlesplit = title.split("\\|");
@@ -55,6 +59,7 @@ public class WebCrawler {
 		
 	}
 	
+	// URL to HTML
 	public static String urlToHTML(String link){
 		try {
 			URL url = new URL(link);
@@ -75,6 +80,7 @@ public class WebCrawler {
 		return link;
 	}
 	
+	// Display Crawled Pages to txt file
 	public static void crawlPages(String links) {
 		
 		try {
@@ -125,8 +131,9 @@ public class WebCrawler {
 		catch(Exception e) {e.printStackTrace();}
 	}
 	
+	// Default Link Crawler
 	public static void crawlDefault() {
-		String links="https://www.cbc.ca/"+"\n"+"https://www.bbc.com/news/world/us_and_canada"+"\n"+"https://www.ctvnews.ca/"+"\n"+"https://www.cicnews.com/";
+		String links="https://www.w3.org/TR/owl-features/";
 		crawlPages(links);
 	}
 	public static void crawlCustom(String line) {
@@ -138,6 +145,7 @@ public class WebCrawler {
 		crawlPages(newLine);
 	}
 	
+	// Delete pages from folder
 	public static void wipeWebPages() {
 		File directory = new File("WebPages");
 		File files[] = directory.listFiles();
