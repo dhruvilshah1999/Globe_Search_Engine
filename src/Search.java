@@ -3,14 +3,14 @@ import java.util.*;
 import java.util.Map.Entry;
 
 public class Search {
-	//Searches for a phrase in the files using InvertedIndex createdy by PreSearch.java.
+	//Searches for a phrase in the files using InvertedIndex created by PreSearch.java.
 	public static void searchPhrase(String keyword,int numberOfResults) {
 		PreSearch ps = new PreSearch();
 		String phrase = keyword;
 		ArrayList<String> as = ps.find(phrase);
 		phrase = phrase.toLowerCase();
 		if(as==null) {			
-			SearchSimillarWords.searchSimillar(phrase,numberOfResults,ps);
+			SpellCheck.spellCheck(phrase,numberOfResults,ps);
 		}
 		else {		
 			Map<String,Integer> sortedMap = SortResultsByRank.sortByRank(as, phrase);
