@@ -1,2 +1,1 @@
-# NewsSearchEngine-main
- 
+Global Search Engine
