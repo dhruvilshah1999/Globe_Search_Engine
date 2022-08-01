@@ -2,7 +2,7 @@ import java.io.File;
 import java.util.*;
 
 
-public class SortResultsByRank {
+public class Decend_SortByRank_And_Ouccurances {
 	//Sorts values of given HashMap in descending order
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private static HashMap<String,Integer> sortValuesInverse(HashMap<String,Integer> map){		
@@ -38,7 +38,7 @@ public class SortResultsByRank {
 		HashMap<String,Integer> wordCount = new HashMap<String,Integer>();
 		
 		for(String fileName : as) {
-			String[] words = PreSearch.getWordsFromFile(new File("WebPages/"+fileName));
+			String[] words = Init_Search.getWordsFromFile(new File("WebPages/"+fileName));
 			for(String word:words) {
 				if(word.toLowerCase().equals(phrase.split("\\W+")[0])) {
 					if(wordCount.containsKey(fileName)) {

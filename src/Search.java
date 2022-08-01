@@ -5,7 +5,7 @@ import java.util.Map.Entry;
 public class Search {
 	//Searches for a phrase in the files using InvertedIndex created by PreSearch.java.
 	public static void searchPhrase(String keyword,int numberOfResults) {
-		PreSearch ps = new PreSearch();
+		Init_Search ps = new Init_Search();
 		String phrase = keyword;
 		ArrayList<String> as = ps.find(phrase);
 		phrase = phrase.toLowerCase();
@@ -13,7 +13,7 @@ public class Search {
 			SpellCheck.spellCheck(phrase,numberOfResults,ps);
 		}
 		else {		
-			Map<String,Integer> sortedMap = SortResultsByRank.sortByRank(as, phrase);
+			Map<String,Integer> sortedMap = Decend_SortByRank_And_Ouccurances.sortByRank(as, phrase);
 			printResult(sortedMap,numberOfResults);
 		}
 	}

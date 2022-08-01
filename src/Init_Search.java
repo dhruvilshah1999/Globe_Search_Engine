@@ -2,11 +2,11 @@ import java.io.File;
 import java.util.*;
 
 //This class uses InvertedIndex functionality and uses HashMap to store the occurrences of words in the files.
-public class PreSearch {
+public class Init_Search {
 	public Map<Integer,String> sources;
     public HashMap<String, HashSet<Integer>> index;
 	
-	PreSearch(){
+	Init_Search(){
 		prepareSearch();
 	}
 	
@@ -52,7 +52,7 @@ public class PreSearch {
 	        for(String word: words){
 	            res.retainAll(index.get(word));
 	        }
-	
+	        	
 	        if(res.size()==0) {
 	            System.out.println("Not found!!!");
 	            return null;
@@ -73,7 +73,7 @@ public class PreSearch {
 		In in = new In(f);
 		String text = in.readAll();
 		text = text.replaceAll("[^a-zA-Z0-9\\s]", ""); 
-		String[] words = text.split(" ");		
+		String[] words = text.split(" ");
 		
 		return words;
 		
